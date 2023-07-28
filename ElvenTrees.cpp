@@ -160,37 +160,6 @@ class Branch {
 			}
 			return counter;
 		}
-//		Branch** () { // массив в котором указны места где лежат эльфы с этти именем
-//			
-//		}
-		
-/*		void FindName( const string &ame ) {
-			Branch *Seeker;
-			
-			cout << "\n\nSearching...\n";
-			cout << NChildren << " " << Level <<"\n";
-			if( this->Name == ame ) return;
-			for( int i  = 0; i < NChildren; i++ ) {
-				for(int j = 0; j < Level; j++ ) {
-//					cout << "Name ";  cout << Name;
-					if( Level == 2 ) cout << Name;
-				}
-				return Children[i]->FindName( ame );
-			}
-		} */
-
-
-/*		void FindName( string name ) {
-			int i;
-			for( i  = 0; i < NChildren; i++ ) {
-				for( int j = 0; j <= Level; j++ ) { cout << "   "; 
-					if( this->Name == name ) cout << Name;
-				}
-				return Children[i]->FindName(Name);
-			}
-			
-		} */
-
 
 		void Print(  ) {
 			for( int j = 0; j <= Level; j++ ) cout << "    ";
@@ -211,7 +180,6 @@ class Forest {
 	protected:
 		Branch **Data;
 		int NTrees;
-//		vector<Branch> Trees;
 	public:
 		Forest( int NTrees = 5 ) {
 			this->NTrees = NTrees;
@@ -253,7 +221,6 @@ class Forest {
 				Data[i]->FoundValue( Value, &cursor ) ;
 				cursor += Counters[i];
 			}
-			//TODO: Fill these positions // массив указателей на все вершины деревьев.
 			return counter;
 		}
 };
@@ -266,37 +233,6 @@ main() {
 	Branch **Petes;
 	int NameCounter = Village->FoundValues( "Peter", &Petes );
 	for( int i = 0; i < NameCounter; i++ ) cout << "( " << i + 1 << " ; " << Petes[i]->GetNameID() + " " + to_string(Petes[i]->NNeighbours() ) << " ) ";
-	
-	/*int *NameCounters;
-	int NCounter = Village->ValueCounter( "Peter", &NameCounters );
-	for( int i = 0; i < NCounter; i++ ) {
-		cout << "( " << i << " ; " << NameCounters[i] << " ) ";
-	}
-	cout << endl;
-	delete Village; */
-	
-/*	Branch* Tree = new Branch;
-	Tree->SetNames();
-	cout << "\n";
-	Tree->Print();
-	cout << endl;
-	cout << "Alex found" <<" " << Tree->ValueCounter("Alex") << " times";
-	Branch** Positions;
-	int NFound = Tree->FoundValue("Alex", &Positions );
-	cout << "\n\n";
-	for( int i = 0; i < NFound; i++ ) {
-		int NNeigh = Positions[i]->NNeighbours();
-		cout << Positions[i]->GetName() << " " <<NNeigh <<  endl;
-	}
-	
-	if( Positions ) delete Positions;
-	int NChilds = Tree->GetNChildren();
-	const Branch *const* BigBranches = Tree->GetChildren();
-	cout << "Big Branches:\n";
-	for( int i = 0; i < NChilds; i++ ) {
-		cout << BigBranches[i]->GetName() << endl;
-	}
-	delete Tree; */
 	
 	return 0;
 }
