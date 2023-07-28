@@ -10,7 +10,6 @@ class Figure {
 	protected:
 		double x, y;
 		int Size = 4;
-//		string *color = new string[Size] { "None", "Red", "Green", "Blue" };
 		vector<string> color{ "None", "Red", "Green", "Blue" };
 	public:	
 		Figure( double x, double y, string Color = "") {
@@ -97,7 +96,7 @@ class Sqare: public Figure {
 		}
 		
 		void print() {
-			cout << "Area: " << Sqare::Area() << endl << "Color: " /*->color->c_str() */;
+			cout << "Area: " << Sqare::Area() << endl << "Color: ";
 			print_color();
 			Find_Bounds( EdgeLen, EdgeLen );
 		}
