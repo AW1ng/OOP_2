@@ -12,7 +12,7 @@ Acolyte::Acolyte( Acolyte *MyBoss, char Rights ): MyBoss(MyBoss), Rights(Rights)
 	MySubdivs = nullptr;
 }
 		
-bool Acolyte::CreateSubdivisions( char SubordRights, int NSubords) { // TODO: check sub 
+bool Acolyte::CreateSubdivisions( char SubordRights, int NSubords) { 
 	if( NSubords <= 0 ) {
 		Random RGenerator;
 		NSubords = RGenerator.get_random(2, 5);
