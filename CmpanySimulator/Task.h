@@ -1,9 +1,5 @@
 #pragma once
 #include <string>
-//#include "Worker.cpp"
-//#include <iostream>
-//using namesapce std;
-//class Worker;
 
 
 class Task {
