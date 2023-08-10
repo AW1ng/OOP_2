@@ -10,7 +10,6 @@ using namespace std;
 class Worker {
 	protected:
 		inline static int IDCounter = 0;
-//		inline static string const PossibleNames[3] = {"Eat", "Sleep", "Pray"}; // C++ 17
 		inline static string const PossibleNames[10] = {"John", "Vlad", "Kira", "Lera", "Alex", "Kirill", "Mary", "Dan", "Leon", "Paul"};
 		int ID;
 		string Name;
