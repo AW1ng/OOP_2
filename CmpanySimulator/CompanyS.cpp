@@ -59,38 +59,15 @@ int main() {
 	cout << "Forking subdiv\n";
 	great_boss.ForkMySubdiv();
 	great_boss.GetMySuvdiv()->Print();
-//	Subdivision Managment( 5, &great_boss, 2 );
-//	Managment.Fork();
-//	Subdivision Div( 3, &boss );
-//	Managment.Print();
-//	cout << ""
+	
 	for( int i = 0; i < 15; i++ ) {
 		great_boss.GenerateIdea();
 		great_boss.GetMySuvdiv()->Print();
 		cout << "----------------------------------------------->\n";
 	}
 	
-//	Task deeds[5];
-//	for( int i = 0; i < 5; i++ ) {
-//		cout << deeds[i].ToString() << " ";
-//	}
-//	cout << endl;
-//	
-//	Worker doers[5];
-//	for( int i = 0; i < 5; i++ ) {
-//		cout << doers[i].ToString() << " ";
-//	}
 	cout << endl;
-	
-/*	Random *RGenerator = new Random;
-	Random *RGenerator2 = new Random;
-	*/
-	
-//	Task *workers = new Worker[10];
-//	for( int i = 0; i < 10; i++ ) {
-//		cout << sometask[ i ].ToString() << '\n';
-//	} 
-//	cout << endl;
+
 	
 	
 	return 0;
