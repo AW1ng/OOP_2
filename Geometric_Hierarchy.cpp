@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include <iostream>
 #include <cmath>
 #include <string>
@@ -34,7 +35,7 @@ class Figure {
     		cout << "b " << b << endl;
     		for ( int i = 0; i < a; i++ ) {
         		for ( int j = 0; j < b; j++ ) {
-            		if (( i == 0 && j >= 0 ) || ( i == a - 1 && j >= 0 )) {
+            		if (( i == 0 ) || ( i == a - 1 )) {
                 		std::cout << "-";
             		}
             		else if (j == 0 || j == b - 1) {
@@ -60,7 +61,7 @@ class Figure {
 class Circle: public Figure {
 	protected:
 		double Radius;
-		const double Pi = 3.1415926535;
+		// const double Pi = 3.1415926535;
 	public:
 		Circle( double radius = 0.0, double x = 0, double y = 0, string color = "None" ) : Figure(x, y, color)  {
 			cout << "Circle c- tor here...\n";
@@ -70,13 +71,14 @@ class Circle: public Figure {
 		double Area() const override {	
 			cout << "Circle area is: ";
 //			return (atan(1) * 4) * Radius * Radius;
-			return Pi * ( Radius * Radius );
+			return M_PI * ( Radius * Radius );
 		}
 		
 		void print()  {
-			double Diametr = Radius * Radius;
+			double Diametr = 2 * Radius;
 			if( this->color == color) cout << "Radius: " << Radius <<endl << Circle::Area() <<  "\nColor: "; 
 			print_color();
+			cout << endl;
 			Find_Bounds( Radius, Radius );
 		}
 		
@@ -98,6 +100,7 @@ class Sqare: public Figure {
 		void print() {
 			cout << "Area: " << Sqare::Area() << endl << "Color: ";
 			print_color();
+			cout << endl;
 			Find_Bounds( EdgeLen, EdgeLen );
 		}
 		
@@ -118,6 +121,7 @@ class Rectangle : public Figure {
 		void print() {
 			cout << "Area: " << Rectangle::Area() << endl << "Color: "; 
 			print_color();
+			cout << endl;
 			Find_Bounds( Width, Height ); 
 		}
 	
@@ -137,6 +141,7 @@ class Triangle : public Figure {
 		void print() {
 			cout << "Area: " << Triangle::Area() << endl << "Color: ";
 			print_color();
+			cout << endl;
 			Find_Bounds(EdgeLen, EdgeLen );
 		}
 	
